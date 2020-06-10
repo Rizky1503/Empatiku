@@ -182,9 +182,9 @@ class HomeController extends BaseController
                    ],
                ]
            ]);
+     return redirect()->route('MitraVendor.TambahPicMitraVendor');
     }
 
-     return redirect()->route('MitraVendor.TambahPicMitraVendor');
 
     
 }
