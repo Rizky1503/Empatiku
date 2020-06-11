@@ -17,31 +17,15 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
          <li class="nav-header">MITRA / VENDOR</li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{ route ('MitraVendor.TambahMitraVendor') }}" class="nav-link">
               <i class="nav-icon fas fa-plus"></i>
               <p>
                 Tambah Mitra / vendor
               </p>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-plus "></i>
-              <p>
-                Tambah Member
-              </p>
-            </a>
-          </li>
+          
 
-        <li class="nav-header">DATA MASTER</li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-users"></i>
-            <p>
-              Tambah Marga
-            </p>
-          </a>
-        </li>
           
         </ul>
       </nav>
