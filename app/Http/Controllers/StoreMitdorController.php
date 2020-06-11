@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Session;
 use RealRashid\SweetAlert\Facades\Alert;
 use Image;
 
-class HomeController extends BaseController
+class StoreMitdorController extends BaseController
 {
     public function index(){
 
@@ -41,7 +41,8 @@ class HomeController extends BaseController
         $dec = decrypt($id);
         $id_mitra = $dec[0];
         $jenis = $dec[1];
-
+        $route = $dec[2];
+        
         $this->title = 'Tambah Mitra / Vendor';   
         $this->sub_title = '';
 
@@ -52,6 +53,7 @@ class HomeController extends BaseController
             'id_mitra' => $id_mitra,
             'jenis' => $jenis,
             'provinsi' => $data_provinsi,
+            'route' => $route
         ]);
     }
 
@@ -127,18 +129,21 @@ class HomeController extends BaseController
                    'alamat'     => $request->alamat,
                    'kota'       => $request->kota,
                    'provinsi'   => $request->provinsi,
-                   'username'   => $request->username,
                    'password'   => $request->password,
                ]
        ]);
        $res = json_decode($response->getBody());
-
-       if ($res->id == 'already exist') {
-            Alert::error('Error Title', 'Error Message');
-            return redirect()->route('MitraVendor.TambahPicMitraVendor');
+       if ($request->route != 'next') {
+            if ($res->id == 'already exist') {
+                Alert::error('Error Title', 'Error Message');
+                return redirect()->route('MitraVendor.TambahPicMitraVendor');
+            }else{
+                return redirect()->route('MitraVendor.TambahBerkasMitraVendor',encrypt([$res->id,$request->jenis]));
+            }
        }else{
-            return redirect()->route('MitraVendor.TambahBerkasMitraVendor',encrypt([$res->id,$request->jenis]));
+            return redirect()->route('ViewMitraVendor.index');
        }
+       
     }   
 
     public function StoreMitdorBerkas(Request $request){
@@ -182,7 +187,7 @@ class HomeController extends BaseController
                    ],
                ]
            ]);
-     return redirect()->route('MitraVendor.TambahPicMitraVendor');
+     return redirect()->route('ViewMitraVendor.index');
     }
 
 

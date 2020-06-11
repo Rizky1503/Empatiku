@@ -16,22 +16,24 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::group(['as'=>'Home.'], function(){
-    Route::get('/', 'HomeController@index')->name('index');
+    Route::get('/', 'StoreMitdorController@index')->name('index');
 });
 
 Route::group(['as'=>'MitraVendor.'], function(){
-    Route::get('/TambahMitraVendor', 'HomeController@TambahMitraVendor')->name('TambahMitraVendor');
-    Route::get('/TambahMitraVendor/PIC/{id_mitdor}', 'HomeController@TambahPicMitraVendor')->name('TambahPicMitraVendor');
-    Route::get('/TambahMitraVendor/Berkas/{id_mitdor}','HomeController@TambahBerkasMitraVendor')->name('TambahBerkasMitraVendor');
+    Route::get('/TambahMitraVendor', 'StoreMitdorController@TambahMitraVendor')->name('TambahMitraVendor');
+    Route::get('/TambahMitraVendor/PIC/{id_mitdor}', 'StoreMitdorController@TambahPicMitraVendor')->name('TambahPicMitraVendor');
+    Route::get('/TambahMitraVendor/Berkas/{id_mitdor}','StoreMitdorController@TambahBerkasMitraVendor')->name('TambahBerkasMitraVendor');
 
-    Route::get('/getKota', 'HomeController@getKota')->name('getKota');
+    Route::get('/getKota', 'StoreMitdorController@getKota')->name('getKota');
 
-    Route::get('/StoreMitdor', 'HomeController@StoreMitdor')->name('StoreMitdor');
-    Route::get('/StoreMitdorPIC', 'HomeController@StoreMitdorPIC')->name('StoreMitdorPIC');
-    Route::post('/StoreMitdorBerkas', 'HomeController@StoreMitdorBerkas')->name('StoreMitdorBerkas');
+    Route::get('/StoreMitdor', 'StoreMitdorController@StoreMitdor')->name('StoreMitdor');
+    Route::get('/StoreMitdorPIC', 'StoreMitdorController@StoreMitdorPIC')->name('StoreMitdorPIC');
+    Route::post('/StoreMitdorBerkas', 'StoreMitdorController@StoreMitdorBerkas')->name('StoreMitdorBerkas');
     
+});
 
-  
+Route::group(['as'=>'ViewMitraVendor.'], function(){
+    Route::get('list', 'ViewMitdorController@index')->name('index');
 });
 
 

@@ -19,12 +19,25 @@
 		            </tr>
 		          </thead>
 		          <tbody>
-		            
+		            @foreach($list as $key => $value)
+		            	<tr>
+		            		<td>{{ $key + 1 }}</td>
+		            		<td>{{ $value->nama }}</td>
+		            		<td>{{ $value->pic->count }} <a class="btn btn-default" href="{{ route('MitraVendor.TambahPicMitraVendor',encrypt([$value->id_mitra,$value->jenis,'next'])) }}">Tambah PIC</a></td>
+		            		<td>
+		            			@if ( $value->berkas == 'Berkas Lengkap')
+		            				<a class="btn btn-secondary">{{ $value->berkas }}</a>
+		            			@else	
+		            				<a class="btn btn-danger" href="{{ route('MitraVendor.TambahBerkasMitraVendor',encrypt([$value->id_mitra,$value->jenis])) }}">{{ $value->berkas }}</a>
+		            			@endif
+		            		</td>
+		            		<td></td>
+		            		<td><a href="#" class="btn btn-info">Lihat Detail</a></td>
+		            	</tr>
+		            @endforeach
 		          </tbody>
-		          
 		        </table>
 		      </div>
-		      <!-- /.card-body -->
 		    </div>
 		  </div>
 		</div>

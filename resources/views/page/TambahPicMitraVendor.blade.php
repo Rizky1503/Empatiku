@@ -14,6 +14,7 @@
 						<div class="row"> 
 							<input type="hidden" name="id_mitra" value="{{$id_mitra}}">
 							<input type="hidden" name="jenis" value="{{$jenis}}">
+							<input type="hidden" name="route" value="{{$route}}">
 							<div class="col-md-6">
 								<div class="form-group">
 			                        <label>Nama PIC</label>
@@ -55,12 +56,6 @@
 									<select class="form-control select2bs4" required name="kota" id="kota" style="width: 100%;">
 									  <option value="">--Pilih Kota--</option>
 									</select>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<label>Username</label>
-									<input type="text" name="username" class="form-control" placeholder="EmPatiKu">
 								</div>
 							</div>
 							<div class="col-md-6">
