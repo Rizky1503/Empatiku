@@ -40,7 +40,7 @@
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
-									<label>Provinsi Kelahiran</label>
+									<label>Provinsi</label>
 									<select class="form-control select2bs4" required name="provinsi" id="provinsi" onchange="getkota(this.value)" style="width: 100%;">
 									  <option value="">--Pilih Provinsi--</option>
 									  @foreach($provinsi as $key => $value)
@@ -51,7 +51,7 @@
 							</div>	
 							<div class="col-md-6">
 								<div class="form-group">
-									<label>Kota Kelahiran</label>
+									<label>Kota</label>
 									<select class="form-control select2bs4" required name="kota" id="kota" style="width: 100%;">
 									  <option value="">--Pilih Kota--</option>
 									</select>
