@@ -40,8 +40,8 @@
         </div>
         <div class="row">
           <div class="col-12">
-            {!! NoCaptcha::renderJs() !!}
-            {!! app('captcha')->display(); !!}
+            {<!-- !! NoCaptcha::renderJs() !!}
+            {!! app('captcha')->display(); !!} -->
           </div>
         </div><br>
         <div class="row">
