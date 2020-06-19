@@ -71,7 +71,7 @@
             </a>
           </li> 
           <li class="nav-item">
-            <a href="{{ route ('MitraVendor.TambahMitraVendor') }}" class="nav-link">
+            <a href="{{ route ('Orderproduk.ListPemesanan') }}" class="nav-link">
               <i class="nav-icon fas fa-plus"></i>
               <p>
                 Lihat Pemesan
