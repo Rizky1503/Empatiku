@@ -101,7 +101,7 @@ class StoreMitdorController extends BaseController
                    'jenis_user' => $request->jenis_user,
                    'nama'       => $request->nama,
                    'email'      => $request->email,
-                   'no_telp'    => $request->no_telp,
+                   'no_telp'    => $request->telp,
                    'alamat'     => $request->alamat,
                    'kota'       => $request->kota,
                    'provinsi'   => $request->provinsi,
@@ -113,7 +113,7 @@ class StoreMitdorController extends BaseController
             Alert::error('Error Title', 'Error Message');
             return redirect()->route('MitraVendor.TambahMitraVendor');
        }else{
-            return redirect()->route('MitraVendor.TambahPicMitraVendor',encrypt([$res->id,$request->jenis_user]));
+            return redirect()->route('MitraVendor.TambahPicMitraVendor',encrypt([$res->id,$request->jenis_user,'']));
        }
     }   
 

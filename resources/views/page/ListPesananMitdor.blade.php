@@ -11,28 +11,22 @@
 		          <thead>
 		            <tr>
 		              <th scope="col">No</th>
-		              <th scope="col">Mitra</th>
-		              <th scope="col">Jumlah PIC</th>
-		              <th scope="col">Berkas</th>
-		              <th scope="col">Produk</th>
-		              <th scope="col"></th>
+		              <th scope="col">Nama Produk</th>
+		              <th scope="col">Jumlah</th>
+		              <th scope="col">keterangan Tambahan</th>
+		              <th scope="col">Alamat Pemesan</th>
+		              <th scope="col">Status</th>
 		            </tr>
 		          </thead>
 		          <tbody>
-		            @foreach($list as $key => $value)
+		            @foreach($pesanan as $key => $value)
 		            	<tr>
 		            		<td>{{ $key + 1 }}</td>
-		            		<td>{{ $value->nama }}</td>
-		            		<td>{{ $value->pic->count }} <a class="btn btn-default" href="{{ route('MitraVendor.TambahPicMitraVendor',encrypt([$value->id_mitra,$value->jenis,'next'])) }}">Tambah PIC</a></td>
-		            		<td>
-		            			@if ( $value->berkas == 'Berkas Lengkap')
-		            				<a class="btn btn-secondary">{{ $value->berkas }}</a>
-		            			@else	
-		            				<a class="btn btn-danger" href="{{ route('MitraVendor.TambahBerkasMitraVendor',encrypt([$value->id_mitra,$value->jenis])) }}">{{ $value->berkas }}</a>
-		            			@endif
-		            		</td>
-		            		<td></td>
-		            		<td><a href="{{ route('ViewMitraVendor.detail',$value->id_mitra)}}" class="btn btn-info">Lihat Detail</a></td>
+		            		<td>{{ $value->nama_produk }}</td>
+		            		<td>{{ $value->jumlah }}</td>
+		            		<td>{{ $value->desc }}</td>
+		            		<td>{{ $value->alamat}}</td>
+		            		<td>{{ $value->status }}</td>
 		            	</tr>
 		            @endforeach
 		          </tbody>

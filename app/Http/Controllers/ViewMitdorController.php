@@ -16,7 +16,7 @@ use Image;
 class ViewMitdorController extends BaseController
 {
     
-   public function index(){
+  public function index(){
       $this->title = 'List Mitra/Vendor';   
         $this->sub_title = '';
 
@@ -26,6 +26,24 @@ class ViewMitdorController extends BaseController
             'page' => $this,
             'list' => $ListMitdor,
         ]);
-   }
+  }
+
+  public function detail($id){
+      $this->title = 'Detail Mitra/Vendor';   
+      $this->sub_title = '';
+
+      $data_provinsi = json_decode(file_get_contents(ENV('APP_URL_API').'mitdor/get_provinsi'));
+      $data = json_decode(file_get_contents(ENV('APP_URL_API').'ListMitdor/detail/'.$id));
+
+      return view('page.DetailMitraVendor')->with([
+          'page' => $this,
+          'data' => $data[0],
+          'provinsi' => $data_provinsi,
+      ]);
+  }
+
+  public function update(Request $request){
+    return $request;
+  }
 
 }

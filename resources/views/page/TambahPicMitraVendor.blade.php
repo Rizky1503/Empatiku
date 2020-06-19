@@ -14,7 +14,9 @@
 						<div class="row"> 
 							<input type="hidden" name="id_mitra" value="{{$id_mitra}}">
 							<input type="hidden" name="jenis" value="{{$jenis}}">
-							<input type="hidden" name="route" value="{{$route}}">
+							@if($route)
+								<input type="hidden" name="route" value="{{$route}}">
+							@endif
 							<div class="col-md-6">
 								<div class="form-group">
 			                        <label>Nama PIC</label>

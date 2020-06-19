@@ -11,30 +11,26 @@
 		          <thead>
 		            <tr>
 		              <th scope="col">No</th>
-		              <th scope="col">Mitra</th>
-		              <th scope="col">Jumlah PIC</th>
-		              <th scope="col">Berkas</th>
-		              <th scope="col">Produk</th>
+		              <th scope="col">Nama pemesan</th>
+		              <th scope="col">No telpon</th>
+		              <th scope="col">Alamat</th>
+		              <th scope="col">Pesanan</th>
+		              <th scope="col">Status</th>
 		              <th scope="col"></th>
 		            </tr>
 		          </thead>
 		          <tbody>
-		            @foreach($list as $key => $value)
-		            	<tr>
-		            		<td>{{ $key + 1 }}</td>
-		            		<td>{{ $value->nama }}</td>
-		            		<td>{{ $value->pic->count }} <a class="btn btn-default" href="{{ route('MitraVendor.TambahPicMitraVendor',encrypt([$value->id_mitra,$value->jenis,'next'])) }}">Tambah PIC</a></td>
-		            		<td>
-		            			@if ( $value->berkas == 'Berkas Lengkap')
-		            				<a class="btn btn-secondary">{{ $value->berkas }}</a>
-		            			@else	
-		            				<a class="btn btn-danger" href="{{ route('MitraVendor.TambahBerkasMitraVendor',encrypt([$value->id_mitra,$value->jenis])) }}">{{ $value->berkas }}</a>
-		            			@endif
-		            		</td>
-		            		<td></td>
-		            		<td><a href="{{ route('ViewMitraVendor.detail',$value->id_mitra)}}" class="btn btn-info">Lihat Detail</a></td>
-		            	</tr>
-		            @endforeach
+		           	@foreach($pemesan->data as $key =>$value)
+		           		<tr>
+		           			<td>{{ $key + 1 }}</td>
+		           			<td>{{ $value->nama_pemesan }}</td>
+		           			<td>{{ $value->no_telpon  }}</td>
+		           			<td>{{ $value->alamat }}</td>
+		           			<td>{{ $value->pesanan->count }}</td>
+		           			<td>{{ $value->status }}</td>
+		           			<td><a href="{{ route('Orderproduk.DetailPesanan',encrypt([ $value->id_pemesan ]))}}" class="btn btn-default">Lihat</a></td>
+		           		</tr>
+		           	@endforeach
 		          </tbody>
 		        </table>
 		      </div>

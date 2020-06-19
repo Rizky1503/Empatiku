@@ -11,17 +11,17 @@
   <link rel="stylesheet" href="{{ asset('public/theme/dist/css/adminlte.min.css')}}">
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
-<body class="hold-transition login-page" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/cc/Danau_Toba_dari_Samosir.jpg'); background-repeat: round;">
+<body class="hold-transition login-page" style="background-image: url('https://merahputih.com/media/8d/2b/42/8d2b42243b9400950bf646ca253d2187.png'); background-repeat: round;">
 <div class="login-box">
   <div class="login-logo">
-    <a href="../../index2.html"><b>TAROMBO</b>BATAK</a>
+    <a href=""><b>Empati</b>Ku</a>
   </div>
 
   <div class="card">
     <div class="card-body login-card-body">
       <p class="login-box-msg"></p>
 
-      <form action="{{route ('Home.loginApi') }}" method="get">
+      <form action="{{ route('Home.loginApi') }}" method="get">
         <div class="input-group mb-3">
           <input type="text" name="username" class="form-control" placeholder="Username">
           <div class="input-group-append">
@@ -64,3 +64,8 @@
 
 </body>
 </html>
+<style type="text/css">
+  .login-logo a, .register-logo a {
+      color: #fefeff;
+  }
+</style>
