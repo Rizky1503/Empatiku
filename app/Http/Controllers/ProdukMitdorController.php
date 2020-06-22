@@ -116,7 +116,7 @@ class ProdukMitdorController extends BaseController
         'page' => $this,
         'id_produk' => $id_produk,
         'jenis' => $jenis,
-        'id_mitra' => $id_mitra
+        'id_mitra' => $id_mitra,
     ]);
   }
 

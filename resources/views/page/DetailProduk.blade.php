@@ -174,7 +174,7 @@
             id_pemesan      : $('#id_pemesan').val(),
           },
           success: function(responses){  
-            location.reload()
+            window.location.href = '{{route("Orderproduk.LihatPesanan")}}'
           }
         });
     }
